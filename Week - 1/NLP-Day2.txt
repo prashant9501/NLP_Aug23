@@ -1,0 +1,77 @@
+NLP: is NOT model building
+
+NLP: make the raw text ready for model building
+Net project: NLP + Model Building
+
+Most NLP models are statistical models...
+
+SEMANTICALLY, SYNTACTICALLY
+
+NLP applications: Text classification (Sentiment Analysis), Text summarization (Abstractive or Extractive), NER (Named Entity Recognition), Part Of Speech (POS) Tagging, Topic Modelling (Latent Dirichet Allocation, Non-Negative Matrix Factorization)
+
+sms/email: spam/not spam
+movie/product reviews: pos/neutral/neg
+twitter sentiment analysis
+hate speech recog..
+
+*****************
+chatbot: Query text
+- intent
+- entities
+- query fulfillment >>
+
++++++++++++++++
+NLP Libraries:
+1. NLTK (base framework)
+2. SpaCy (NLP framework, similar to NLTK)
+3. TextBlob (wrapper over nltk)
+4. Gensim (contains some pre-trained models & un-tranied for NLP)
+...
+
+pywsd, APIs for google translate, gTTS, ...
+
+=================
+Common terms in NLP:
+- Corpus: this is your entire dataset. Collection of documents.
+
+- Document: Single data-point for NLP (individual sms/email/tweet/review..)
+Document may contain several paragraphs. Each paragraph will contain several lines.
+Each line will contain several words.
+
+Corpus >> Document >> Paragraph >> Sentences >> Words
+Corpus >> Document >> Words
+
+- Token: the individual word/phrases/sents to be used for creating the vocab.
+Python list containing string >> tokens
+N-gram tokenization: default  "N" = 1.
+
+- Vocabulary: Collection of UNIQUE Tokens from the entire Corpus!
+Collection (list, dict, "Counter" from the "collections" package ) of ALL the unique tokens from ALL the documents.
+key: actaul word
+value: word freq
+
+doc1: I love cooking >>> I love cook
+doc2: Today I cooked pasta today >>> Today I cook pasta today
+vocab as a list >> [i, love, cook, pasta, today] >>> unique words in the corpus
+vocab as dict >>> {i : 2, cook:2, love:1, pasta:1, today:2 }
+key: actaul word
+value: word freq
+
+vocab as dict >>> {0:i, 1:love, 2:cook,  3:today, 4:pasta}
+key: index or the word freq or the ranking of the words based on thier frequencies. (0 ~ the most freq word, 1 ~ the second most freq word ... and so on )
+value: actaul word
+
+
+===============
+
+StopWords >>>
+- "general" language-specific stopwords >>> these are the most-commonly used words in that language
+     - do not convey much information or context (their semantic value is zero)
+a, an, the, he, she ... >> this list is built-in in NLTK, SpaCy, scikit-learn.text_preprocessing
+
+- "domain-specific" Stop Words (most freq words of that domain, which are not so discrimative/informative.)
+movie, film, actor, director, song, cast, story >>> these words are present almost in every reivew  whether it is positive/neutral/negative
+
+
+==================
+https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html
