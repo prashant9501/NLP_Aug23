@@ -1,0 +1,52 @@
+Corpus >>> collection of documents (dataset)
+
+Document >>> single text-based instance/record 
+(sms, whatsapp chat, email, tweet, product review)
+
+Document is a collection of sentences.
+Sentence is a collection of words.
+
+Tokenization means >> breaking down 
+- sentence-level >> break a document into individual sentences
+- word-level >> break a document/sentences into individual words.
+
+"""
+The central government had earlier decided it will maintain 3 lakh tonne of onions in the 2023-24 season as buffer stock. In 2022-23, the government maintained 2.51 lakh tonne onion as buffer stock.
+"""
+- sentence-level tokenizer >>> list of 2 strings
+- word-level tokenizer (unigram) >>> list of all the words in the entire document 
+
+------------
+N-gram tokenization:
+- Unigram tokenization:>>> ['The',  'central',  'government', 'had',  'earlier', 'decided', 'it', 'will', 'maintain', ....]
+The central government had earlier decided it will maintain
+
+- Bigram tokenization: >>> ['The central', 'central government', 'government  had', 'had earlier' .... ]
+
+- Tri-gram tokenization: >>> ['The central government' , 'central government had',  'government had earlier', ....]
+
+==========
+
+NLP Libraries:
+- NLTK (natural language toolkit) >> Main NLP engire for Python ecosystem
+- Spacy >> alternate to nltk >> more advance engine >> more user-friendly
+- Textblog (wrapper over nltk)
+- Gensim (collection of advanced ML/DL models for topic modelling, word embeddings etc..)
+
+
+==============
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
