@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Tweet Sentiment Analysis</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Tweet Sentiment Analysis</h1>
+        <form action="/predict" method="post">
+            <textarea name="tweet" placeholder="Enter your tweet here..." rows="4">{{ request.form['tweet'] }}</textarea>
+            <div class="buttons">
+                <button type="submit">Submit</button>                
+				<input type="reset" value="Clear">
+            </div>
+        </form>
+        {% if prediction %}
+        <h2 style="color: {{ 'green' if prediction == 'Positive' else 'red' }};">{{ prediction }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
